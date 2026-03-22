@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wetakush - security researcher & developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow--1"></div>
+    <div class="bg-glow bg-glow--2"></div>
+    <div class="scanline"></div>
+
+    <nav class="nav">
+        <div class="nav__logo">
+            <span class="nav__logo-bracket">[</span>
+            <span class="nav__logo-text">wetakush</span>
+            <span class="nav__logo-bracket">]</span>
+        </div>
+        <div class="nav__links">
+            <a href="#about" class="nav__link">about</a>
+            <a href="#skills" class="nav__link">skills</a>
+            <a href="#security" class="nav__link">security</a>
+            <a href="#contact" class="nav__link">contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero__terminal">
+            <div class="terminal__header">
+                <span class="terminal__dot terminal__dot--red"></span>
+                <span class="terminal__dot terminal__dot--yellow"></span>
+                <span class="terminal__dot terminal__dot--green"></span>
+                <span class="terminal__title">wetakush@kali:~</span>
+            </div>
+            <div class="terminal__body">
+                <div class="terminal__line">
+                    <span class="terminal__prompt">$</span>
+                    <span class="terminal__command typing" id="heroCommand">whoami </span>
+                </div>
+                <div class="terminal__output" id="heroOutput">
+                    <br>
+                    <span class="terminal__accent">вета</span> aka <span class="terminal__highlight">wetakush</span>
+                    <br><br>
+                    security researcher & software developer
+                    <br>
+                    <span class="terminal__dim">Bug Bounty Hunter · Pentester · Full-Stack Dev</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero__tagline">
+            <h1 class="glitch" data-text="Breaking systems to make them stronger">breaking systems to make them stronger</h1>
+            <p class="hero__sub">нахожу уязвимости, которые другие пропускают.</p>
+            <p class="hero__sub">пишу код который сложно сломать.</p>
+        </div>
+
+        <div class="hero__stats">
+            <div class="stat">
+                <div class="stat__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div class="stat__info">
+                    <span class="stat__label">Bug Bounty</span>
+                    <span class="stat__value">BI.ZONE</span>
+                </div>
+            </div>
+            <div class="stat">
+                <div class="stat__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div>
+                <div class="stat__info">
+                    <span class="stat__label">Languages</span>
+                    <span class="stat__value">6+</span>
+                </div>
+            </div>
+            <div class="stat">
+                <div class="stat__icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </div>
+                <div class="stat__info">
+                    <span class="stat__label">Open Source</span>
+                    <span class="stat__value">GitHub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="section__header">
+            <span class="section__number">01</span>
+            <h2 class="section__title">About</h2>
+            <div class="section__line"></div>
+        </div>
+        <div class="about__content">
+            <div class="about__text">
+                <p>
+                    Привет, я <span class="highlight">вета</span>. Занимаюсь информационной безопасностью
+                    и разработкой. Участвую в программах Bug Bounty на платформе
+                    <a href="https://bugbounty.bi.zone/profile/wetakush" target="_blank" rel="noopener">BI.ZONE</a>,
+                    где нахожу уязвимости в реальных продуктах.
+                </p>
+                <p>
+                    Пишу на Python, C++, C# и веб-стеке. Понимаю, как устроены системы изнутри -
+                    от низкоуровневого кода до веб-приложений. Это позволяет мне находить баги
+                    там, где другие не ищут.
+                </p>
+                <p>
+                    Мой подход - глубокое понимание технологий, а не поверхностное сканирование.
+                    Каждый баг-репорт - это детальный анализ с proof of concept и рекомендациями по исправлению.
+                </p>
+            </div>
+            <div class="about__card">
+                <div class="card__header">
+                    <span class="card__file">~/profile.json</span>
+                </div>
+                <pre class="card__code"><code>{
+  <span class="json-key">"handle"</span>: <span class="json-str">"wetakush"</span>,
+  <span class="json-key">"name"</span>: <span class="json-str">"вета"</span>,
+  <span class="json-key">"role"</span>: [
+    <span class="json-str">"Security Researcher"</span>,
+    <span class="json-str">"Software Developer"</span>,
+    <span class="json-str">"Bug Bounty Hunter"</span>
+  ],
+  <span class="json-key">"focus"</span>: <span class="json-str">"Offensive Security"</span>,
+  <span class="json-key">"platform"</span>: <span class="json-str">"BI.ZONE Bug Bounty"</span>
+}</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="section__header">
+            <span class="section__number">02</span>
+            <h2 class="section__title">Skills</h2>
+            <div class="section__line"></div>
+        </div>
+        <div class="skills__grid">
+            <div class="skill-card" data-category="lang">
+                <div class="skill-card__icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <h3 class="skill-card__title">Python</h3>
+                <p class="skill-card__desc">Автоматизация, скрипты для пентеста, разработка инструментов, бэкенд</p>
+                <div class="skill-card__bar">
+                    <div class="skill-card__progress" style="--progress: 95%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card" data-category="lang">
+                <div class="skill-card__icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div>
+                <h3 class="skill-card__title">C++ / C#</h3>
+                <p class="skill-card__desc">Низкоуровневая разработка, реверс-инжиниринг, системное программирование</p>
+                <div class="skill-card__bar">
+                    <div class="skill-card__progress" style="--progress: 80%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card" data-category="web">
+                <div class="skill-card__icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <h3 class="skill-card__title">HTML / CSS / JS</h3>
+                <p class="skill-card__desc">Фронтенд, анализ веб-приложений, поиск XSS/CSRF и клиентских уязвимостей</p>
+                <div class="skill-card__bar">
+                    <div class="skill-card__progress" style="--progress: 85%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card" data-category="security">
+                <div class="skill-card__icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <h3 class="skill-card__title">Pentesting</h3>
+                <p class="skill-card__desc">Web Application Security, Bug Bounty, OWASP Top 10, Burp Suite</p>
+                <div class="skill-card__bar">
+                    <div class="skill-card__progress" style="--progress: 90%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card" data-category="tools">
+                <div class="skill-card__icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+                </div>
+                <h3 class="skill-card__title">DevOps & Tools</h3>
+                <p class="skill-card__desc">Linux, Git, Docker, Networking, Bash scripting</p>
+                <div class="skill-card__bar">
+                    <div class="skill-card__progress" style="--progress: 75%"></div>
+                </div>
+            </div>
+
+            <div class="skill-card" data-category="security">
+                <div class="skill-card__icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                </div>
+                <h3 class="skill-card__title">OSINT & Recon</h3>
+                <p class="skill-card__desc">Разведка, сбор информации, анализ поверхности атаки</p>
+                <div class="skill-card__bar">
+                    <div class="skill-card__progress" style="--progress: 85%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section class="section" id="security">
+        <div class="section__header">
+            <span class="section__number">03</span>
+            <h2 class="section__title">Security</h2>
+            <div class="section__line"></div>
+        </div>
+        <div class="security__content">
+            <div class="security__main">
+                <div class="security__platform">
+                    <div class="platform__badge">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <div>
+                            <h3>BI.ZONE Bug Bounty</h3>
+                            <p>Active Security Researcher</p>
+                        </div>
+                    </div>
+                    <a href="https://bugbounty.bi.zone/profile/wetakush" target="_blank" rel="noopener" class="btn btn--primary">
+                        <span>View Profile</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                    </a>
+                </div>
+
+                <div class="security__areas">
+                    <h3 class="security__subtitle">Области экспертизы</h3>
+                    <div class="tags">
+                        <span class="tag">Web Application Security</span>
+                        <span class="tag">API Security</span>
+                        <span class="tag">Authentication Bypass</span>
+                        <span class="tag">IDOR</span>
+                        <span class="tag">SQL Injection</span>
+                        <span class="tag">XSS</span>
+                        <span class="tag">SSRF</span>
+                        <span class="tag">CSRF</span>
+                        <span class="tag">Business Logic</span>
+                        <span class="tag">Access Control</span>
+                        <span class="tag">Information Disclosure</span>
+                        <span class="tag">Race Conditions</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="security__methodology">
+                <div class="card__header">
+                    <span class="card__file">~/methodology.sh</span>
+                </div>
+                <div class="methodology__steps">
+                    <div class="step">
+                        <span class="step__num">01</span>
+                        <div class="step__content">
+                            <h4>Reconnaissance</h4>
+                            <p>Глубокий сбор информации о цели, маппинг поверхности атаки</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step__num">02</span>
+                        <div class="step__content">
+                            <h4>Analysis</h4>
+                            <p>Ручной анализ логики приложения, поиск нестандартных векторов</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step__num">03</span>
+                        <div class="step__content">
+                            <h4>Exploitation</h4>
+                            <p>Разработка PoC, подтверждение импакта уязвимости</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <span class="step__num">04</span>
+                        <div class="step__content">
+                            <h4>Reporting</h4>
+                            <p>Детальный отчёт с шагами воспроизведения и рекомендациями</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="section__header">
+            <span class="section__number">04</span>
+            <h2 class="section__title">Contact</h2>
+            <div class="section__line"></div>
+        </div>
+        <div class="contact__content">
+            <p class="contact__text">Открыт для сотрудничества, приватных программ и интересных проектов.</p>
+            <div class="contact__links">
+                <a href="https://t.me/noxad" target="_blank" rel="noopener" class="contact-card">
+                    <div class="contact-card__icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                    </div>
+                    <div class="contact-card__info">
+                        <span class="contact-card__label">Telegram</span>
+                        <span class="contact-card__value">@noxad</span>
+                    </div>
+                    <svg class="contact-card__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </a>
+
+                <a href="https://github.com/wetakush" target="_blank" rel="noopener" class="contact-card">
+                    <div class="contact-card__icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </div>
+                    <div class="contact-card__info">
+                        <span class="contact-card__label">GitHub</span>
+                        <span class="contact-card__value">wetakush</span>
+                    </div>
+                    <svg class="contact-card__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </a>
+
+                <a href="https://bugbounty.bi.zone/profile/wetakush" target="_blank" rel="noopener" class="contact-card">
+                    <div class="contact-card__icon">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <div class="contact-card__info">
+                        <span class="contact-card__label">Bug Bounty</span>
+                        <span class="contact-card__value">BI.ZONE</span>
+                    </div>
+                    <svg class="contact-card__arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__content">
+            <span class="footer__text">
+                <span class="terminal__prompt">$</span> echo "Designed & built by wetakush"
+            </span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
