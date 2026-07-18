@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE rss [
-  <!ENTITY % dtd SYSTEM "https://wetakush.github.io/xxe.dtd">
-  %dtd;
-]>
 <rss version="2.0">
 <channel>
-<title>Test Feed</title>
+<title>Test Clean Feed</title>
 <link>https://wetakush.github.io/</link>
+<description>Clean RSS feed for crawler diagnostic</description>
 <language>ru</language>
 <item>
-<title>Test Article</title>
-<link>https://wetakush.github.io/article2</link>
-<guid>https://wetakush.github.io/article2</guid>
+<title>Clean Article One</title>
+<link>https://wetakush.github.io/clean1</link>
+<guid>https://wetakush.github.io/clean1</guid>
 <pubDate>Fri, 18 Jul 2025 12:00:00 +0300</pubDate>
+<description>This is a clean test article with no entities.</description>
 </item>
 </channel>
 </rss>
