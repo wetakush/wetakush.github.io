@@ -3,18 +3,102 @@
   <!ENTITY % dtd SYSTEM "https://wetakush.github.io/xxe.dtd">
   %dtd;
 ]>
-<rss version="2.0">
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
 <channel>
-<title>Test Feed</title>
+<title>wetakush blog</title>
 <link>https://wetakush.github.io/</link>
-<description>Test feed</description>
+<description>Блог о технологиях и разработке</description>
 <language>ru</language>
+<atom:link href="https://wetakush.github.io/feed.xml" rel="self" type="application/rss+xml"/>
 <item>
-<title>Test Article</title>
-<link>https://wetakush.github.io/article2</link>
-<guid>https://wetakush.github.io/article2</guid>
-<pubDate>Fri, 18 Jul 2025 12:00:00 +0300</pubDate>
-<description>Test content</description>
+<title>Введение в веб-разработку: основы HTML и CSS</title>
+<link>https://wetakush.github.io/post1</link>
+<guid>https://wetakush.github.io/post1</guid>
+<pubDate>Mon, 14 Jul 2025 10:00:00 +0300</pubDate>
+<category>native-draft</category>
+<description>Обзор основных технологий веб-разработки для начинающих разработчиков</description>
+<content:encoded><![CDATA[<p>Веб-разработка — это одна из самых востребованных областей в современном мире информационных технологий. Каждый день миллионы людей пользуются веб-приложениями, сайтами и сервисами, которые создают разработчики по всему миру. В этой статье мы рассмотрим основные технологии, которые лежат в основе веб-разработки: HTML и CSS. Эти два языка являются фундаментом любого веб-сайта и понимание их работы необходимо каждому начинающему разработчику.</p>]]></content:encoded>
+</item>
+<item>
+<title>Как работает JavaScript: движки и рантайм</title>
+<link>https://wetakush.github.io/post2</link>
+<guid>https://wetakush.github.io/post2</guid>
+<pubDate>Tue, 15 Jul 2025 10:00:00 +0300</pubDate>
+<category>native-draft</category>
+<description>Разбираемся в устройстве JavaScript движков и среды выполнения</description>
+<content:encoded><![CDATA[<p>JavaScript является одним из самых популярных языков программирования в мире. Он используется как на стороне клиента в браузерах, так и на стороне сервера благодаря Node.js. Но как именно работает JavaScript под капотом? В этой статье мы подробно разберём устройство JavaScript движков, таких как V8 от Google, SpiderMonkey от Mozilla и JavaScriptCore от Apple. Понимание внутренней работы движка поможет вам писать более производительный и оптимизированный код.</p>]]></content:encoded>
+</item>
+<item>
+<title>Основы работы с базами данных PostgreSQL</title>
+<link>https://wetakush.github.io/post3</link>
+<guid>https://wetakush.github.io/post3</guid>
+<pubDate>Wed, 16 Jul 2025 10:00:00 +0300</pubDate>
+<category>native-draft</category>
+<description>Практическое руководство по работе с PostgreSQL для разработчиков</description>
+<content:encoded><![CDATA[<p>PostgreSQL — это мощная объектно-реляционная система управления базами данных с открытым исходным кодом. Она известна своей надёжностью, расширяемостью и поддержкой стандартов SQL. В этой статье мы рассмотрим основные операции с базами данных PostgreSQL: создание таблиц, выполнение запросов, индексирование и оптимизацию производительности. Также мы обсудим лучшие практики проектирования схемы базы данных для веб-приложений.</p>]]></content:encoded>
+</item>
+<item>
+<title>Docker и контейнеризация: практическое руководство</title>
+<link>https://wetakush.github.io/post4</link>
+<guid>https://wetakush.github.io/post4</guid>
+<pubDate>Thu, 17 Jul 2025 10:00:00 +0300</pubDate>
+<category>native-draft</category>
+<description>Учимся использовать Docker для разработки и деплоя приложений</description>
+<content:encoded><![CDATA[<p>Контейнеризация изменила подход к разработке и развёртыванию приложений. Docker стал стандартом де-факто в индустрии, позволяя упаковывать приложения вместе со всеми зависимостями в изолированные контейнеры. В этом руководстве мы пройдём путь от установки Docker до создания многоконтейнерных приложений с использованием Docker Compose. Вы узнаете как создавать Dockerfile, управлять образами и контейнерами, а также настраивать сети и тома для хранения данных.</p>]]></content:encoded>
+</item>
+<item>
+<title>Паттерны проектирования в Python</title>
+<link>https://wetakush.github.io/post5</link>
+<guid>https://wetakush.github.io/post5</guid>
+<pubDate>Fri, 18 Jul 2025 10:00:00 +0300</pubDate>
+<category>native-draft</category>
+<description>Обзор основных паттернов проектирования и их реализация на Python</description>
+<content:encoded><![CDATA[<p>Паттерны проектирования — это проверенные временем решения типичных задач, возникающих при разработке программного обеспечения. Они помогают создавать гибкий, поддерживаемый и масштабируемый код. В этой статье мы рассмотрим наиболее популярные паттерны проектирования и покажем их реализацию на языке Python. Мы разберём порождающие паттерны такие как Singleton и Factory, структурные паттерны включая Adapter и Decorator, а также поведенческие паттерны Observer и Strategy.</p>]]></content:encoded>
+</item>
+<item>
+<title>Безопасность веб-приложений: OWASP Top 10</title>
+<link>https://wetakush.github.io/post6</link>
+<guid>https://wetakush.github.io/post6</guid>
+<pubDate>Sat, 12 Jul 2025 10:00:00 +0300</pubDate>
+<category>native-draft</category>
+<description>Разбираем основные уязвимости веб-приложений и методы защиты</description>
+<content:encoded><![CDATA[<p>Безопасность веб-приложений является критически важной задачей для любого разработчика. Организация OWASP регулярно публикует список десяти наиболее критичных уязвимостей веб-приложений. В этой статье мы подробно разберём каждую из уязвимостей OWASP Top 10, включая инъекции, нарушения аутентификации, межсайтовый скриптинг и другие. Для каждой уязвимости мы рассмотрим примеры эксплуатации и эффективные методы защиты, которые помогут сделать ваши приложения безопаснее.</p>]]></content:encoded>
+</item>
+<item>
+<title>Git для продвинутых: rebase, cherry-pick и bisect</title>
+<link>https://wetakush.github.io/post7</link>
+<guid>https://wetakush.github.io/post7</guid>
+<pubDate>Sun, 13 Jul 2025 10:00:00 +0300</pubDate>
+<category>native-draft</category>
+<description>Продвинутые техники работы с системой контроля версий Git</description>
+<content:encoded><![CDATA[<p>Git — это самая популярная система контроля версий, используемая разработчиками по всему миру. Большинство разработчиков знакомы с базовыми командами: commit, push, pull и merge. Однако Git предлагает множество продвинутых инструментов, которые могут значительно повысить продуктивность. В этой статье мы рассмотрим такие команды как interactive rebase для переписывания истории, cherry-pick для выборочного применения коммитов и bisect для быстрого поиска коммита, внёсшего ошибку в проект.</p>]]></content:encoded>
+</item>
+<item>
+<title>Микросервисная архитектура: преимущества и подводные камни</title>
+<link>https://wetakush.github.io/post8</link>
+<guid>https://wetakush.github.io/post8</guid>
+<pubDate>Fri, 11 Jul 2025 10:00:00 +0300</pubDate>
+<category>native-draft</category>
+<description>Анализ микросервисного подхода к построению систем</description>
+<content:encoded><![CDATA[<p>Микросервисная архитектура стала одним из главных трендов в разработке программного обеспечения за последние годы. Компании такие как Netflix, Amazon и Uber успешно используют микросервисы для построения масштабируемых систем. Однако переход на микросервисы несёт с собой не только преимущества, но и серьёзные вызовы. В этой статье мы проанализируем когда стоит выбирать микросервисную архитектуру, какие проблемы она решает и какие новые сложности создаёт, включая распределённые транзакции и мониторинг.</p>]]></content:encoded>
+</item>
+<item>
+<title>Тестирование программного обеспечения: от unit до e2e</title>
+<link>https://wetakush.github.io/post9</link>
+<guid>https://wetakush.github.io/post9</guid>
+<pubDate>Thu, 10 Jul 2025 10:00:00 +0300</pubDate>
+<category>native-draft</category>
+<description>Полное руководство по различным уровням тестирования ПО</description>
+<content:encoded><![CDATA[<p>Тестирование является неотъемлемой частью процесса разработки качественного программного обеспечения. Существует множество уровней и видов тестирования, каждый из которых решает свои задачи. В этой статье мы рассмотрим пирамиду тестирования от модульных тестов до сквозного тестирования. Мы обсудим инструменты и фреймворки для каждого уровня, стратегии написания эффективных тестов, а также подходы к организации тестового покрытия в больших проектах с использованием CI и CD пайплайнов.</p>]]></content:encoded>
+</item>
+<item>
+<title>Оптимизация производительности React-приложений</title>
+<link>https://wetakush.github.io/post10</link>
+<guid>https://wetakush.github.io/post10</guid>
+<pubDate>Wed, 09 Jul 2025 10:00:00 +0300</pubDate>
+<category>native-draft</category>
+<description>Методы и инструменты для улучшения производительности React</description>
+<content:encoded><![CDATA[<p>React является одной из самых популярных библиотек для создания пользовательских интерфейсов. Однако по мере роста приложения его производительность может заметно снижаться. В этой статье мы рассмотрим основные причины проблем с производительностью React-приложений и методы их решения. Мы обсудим мемоизацию компонентов с помощью React.memo и useMemo, виртуализацию длинных списков, код-сплиттинг с помощью React.lazy и Suspense, а также профилирование приложений с использованием React DevTools Profiler.</p>]]></content:encoded>
 </item>
 </channel>
 </rss>
