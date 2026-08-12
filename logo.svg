@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg [
-  <!ENTITY xxe SYSTEM "file:///etc/passwd">
-]>
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="120">
-  <rect width="800" height="120" fill="#111"/>
-  <text x="10" y="70" font-size="30" fill="#00ff00" font-family="monospace">DOCTYPE_NO_REF</text>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="120">
+  <image href="file:///etc/passwd" x="0" y="0" width="800" height="120"/>
+  <image xlink:href="file:///etc/hostname" x="0" y="0" width="800" height="120"/>
+  <text x="10" y="70" font-size="30" fill="#00ff00" font-family="monospace">FILE_URI_TEST</text>
 </svg>
