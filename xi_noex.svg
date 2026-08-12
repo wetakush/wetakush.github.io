@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     width="400" height="400">
+  <rect width="400" height="400" fill="blue"/>
+  <text x="10" y="200" font-size="20" fill="white">
+    <xi:include href="file:///zzz_nonexistent_xi_xyz_abc123" parse="text" xi:fallback=""/>
+  </text>
+</svg>
