@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xi="http://www.w3.org/2001/XInclude"
+     width="1200" height="800">
+  <rect width="1200" height="800" fill="black"/>
+  <text x="10" y="60" font-size="40" fill="lime" font-family="monospace">
+    <xi:include href="https://wetakush.github.io/inject.css" parse="text"/>
+  </text>
+</svg>
