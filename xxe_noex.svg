@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg [
+  <!ENTITY xxe SYSTEM "file:///zzz_nonexistent_entity_target_xyz_abc123">
+]>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400">
+  <rect width="400" height="400" fill="blue"/>
+  <text x="10" y="200" font-size="20" fill="white">&xxe;</text>
+</svg>
