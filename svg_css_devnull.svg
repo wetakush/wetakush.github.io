@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400">
+  <style>
+    @import url("file:///dev/null");
+    @font-face { font-family: pwn; src: url("file:///dev/null"); }
+  </style>
+  <rect width="400" height="400" fill="none"/>
+</svg>
