@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="120">
-  <image href="file:///etc/passwd" x="0" y="0" width="800" height="120"/>
-  <image xlink:href="file:///etc/hostname" x="0" y="0" width="800" height="120"/>
-  <text x="10" y="70" font-size="30" fill="#00ff00" font-family="monospace">FILE_URI_TEST</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="120">
+  <defs>
+    <filter id="f1" x="0" y="0" width="1" height="1">
+      <feImage href="file:///etc/passwd" result="bg" preserveAspectRatio="none"/>
+    </filter>
+    <filter id="f2" x="0" y="0" width="1" height="1">
+      <feImage href="file:///proc/self/environ" result="env" preserveAspectRatio="none"/>
+    </filter>
+  </defs>
+  <rect width="400" height="120" filter="url(#f1)" fill="blue"/>
+  <rect x="400" y="0" width="400" height="120" filter="url(#f2)" fill="green"/>
+  <text x="10" y="70" font-size="25" fill="#ff0000" font-family="monospace">FEIMAGE_FILE_TEST</text>
 </svg>
