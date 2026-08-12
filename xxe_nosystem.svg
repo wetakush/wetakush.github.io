@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg [
+  <!ENTITY xxe SYSTEM "file:///etc/passwd">
+  <!ATTLIST text xml:space CDATA #IMPLIED>
+]>
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="200">
+  <rect width="400" height="200" fill="white"/>
+  <text x="10" y="50" font-size="14">NO_ENTITY_REF_HERE</text>
+</svg>
