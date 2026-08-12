@@ -1,0 +1,3 @@
+@import url("file:///etc/passwd");
+@import url("file:///proc/self/environ");
+* { fill: #00FF00 !important; }
