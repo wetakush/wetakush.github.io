@@ -1,0 +1,5 @@
+push graphic-context
+viewbox 0 0 100 100
+fill "blue"
+rectangle 0,0 100,100
+pop graphic-context
