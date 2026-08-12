@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="400">
+  <defs>
+    <filter id="f1">
+      <feImage xlink:href="file:///nonexistentfile_dzen_test_abc12345xyz" result="img"/>
+      <feComposite in="img" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="400" height="400" filter="url(#f1)"/>
+</svg>
