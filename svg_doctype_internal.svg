@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg [
+  <!ELEMENT svg ANY>
+  <!ELEMENT text ANY>
+]>
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+  <rect width="200" height="200" fill="green"/>
+  <text x="10" y="50" fill="white">DOCTYPE_INTERNAL_ONLY</text>
+</svg>
