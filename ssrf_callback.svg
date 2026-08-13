@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="400" height="400">
+  <rect width="400" height="400" fill="green"/>
+  <image x="0" y="0" width="400" height="400"
+         href="https://webhook.site/13a21dcf-40ea-4dc8-818e-2ea5e1ab88b1/ssrf-librsvg-test"/>
+</svg>
