@@ -423,6 +423,9 @@ body.burst .glitch::after{animation-duration:.17s}
 .footer-cmd{margin-top:2.4em;font-size:.74rem;color:var(--grey)}
 .footer-cmd b{color:var(--green);font-weight:400}
 .footer-hello{margin-top:3em;font-size:.62rem;letter-spacing:.4em;color:#233023}
+.footer-alt{margin-top:1.2em;font-size:.66rem}
+.footer-alt a{color:#233023;text-decoration:none;letter-spacing:.06em;transition:color .2s}
+.footer-alt a:hover{color:var(--red)}
 
 #player{
   position:fixed;right:16px;bottom:16px;z-index:240;

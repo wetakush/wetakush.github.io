@@ -1,0 +1,310 @@
+/* ============================================================
+   БИО ЗА РОДИНУ v1.0 — антидизайн как искусство
+   шрифт: comic sans (специально)
+   ============================================================ */
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{overflow-x:hidden;overflow-x:clip}
+body{
+  font-family:'Comic Sans MS','Comic Sans',cursive,serif;
+  color:#111;
+  overflow-x:hidden;
+  background:linear-gradient(160deg,#ffe600 0%,#7cff00 25%,#00e0ff 50%,#c800ff 75%,#ffe600 100%);
+  background-size:300% 300%;
+  animation:bgroll 24s linear infinite;
+}
+@keyframes bgroll{0%{background-position:0% 50%}100%{background-position:300% 50%}}
+
+a{color:#0033cc;text-decoration:underline wavy}
+a:hover{color:red}
+b{font-weight:bold}
+.tiny{font-size:.72em;color:#555}
+.hidden{display:none!important}
+.blink{animation:blink .9s steps(2,end) infinite}
+@keyframes blink{50%{opacity:0}}
+
+::selection{background:#ff0}
+
+/* ============ ПРЕЛОАДЕР ============ */
+#preload{
+  position:fixed;inset:0;z-index:1000;background:#000;color:#0f0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:16px;padding:20px;text-align:center;
+}
+.pl-title{font-size:clamp(1.4rem,5vw,2.6rem);font-family:'Courier New',monospace;font-weight:bold}
+.pl-bar{width:min(420px,80vw);height:34px;border:4px ridge #0f0;padding:3px;background:#001100}
+.pl-bar i{display:block;height:100%;width:0;background:repeating-linear-gradient(90deg,#0f0 0 14px,#080 14px 20px)}
+.pl-pct{font-family:'Courier New',monospace;font-size:1.4rem}
+.pl-note{color:#066;font-size:.7rem;margin-top:8px}
+
+/* ============ КНОПКИ ============ */
+.btn-cool{
+  font-family:inherit;font-size:1rem;font-weight:bold;
+  background:linear-gradient(180deg,#fff,#ccc);
+  border:4px outset #999;
+  padding:.55em 1.2em;cursor:pointer;color:#000;
+  text-shadow:1px 1px 0 #fff;
+}
+.btn-cool:active{border-style:inset;transform:translateY(2px)}
+.btn-danger{
+  font-family:inherit;font-size:clamp(1.1rem,3vw,1.5rem);font-weight:bold;
+  background:linear-gradient(180deg,#ff5555,#cc0000);
+  color:#fff;border:5px outset #800000;
+  padding:.6em 1.4em;cursor:pointer;text-shadow:2px 2px 0 #500;
+}
+.btn-danger:active{border-style:inset}
+.sound-btn{position:fixed;top:64px;right:12px;z-index:500;font-size:.8rem;transform:rotate(3deg)}
+.btn-nope{
+  font-family:inherit;font-size:1rem;font-weight:bold;
+  background:linear-gradient(180deg,#ddd,#aaa);border:4px outset #888;
+  padding:.55em 1.2em;cursor:pointer;position:relative;
+  transition:transform .18s;
+}
+
+/* ============ БЕГУЩИЕ СТРОКИ ============ */
+.topmarquee{
+  background:#000;color:#ff0;font-weight:bold;font-size:1.05rem;
+  padding:.4em 0;border-bottom:4px solid red;position:sticky;top:0;z-index:400;
+}
+.bottommarquee{
+  background:#000;color:#0f0;font-weight:bold;padding:.4em 0;
+  border-top:4px solid #0f0;
+}
+
+/* ============ HERO ============ */
+.hero{
+  text-align:center;padding:56px 16px 40px;position:relative;
+}
+.hero-spin{
+  display:inline-block;font-weight:bold;font-size:clamp(.9rem,2.5vw,1.3rem);
+  background:#000;color:#ff0;padding:.3em 1em;transform:rotate(-2deg);
+  animation:wob 2.2s ease-in-out infinite;
+}
+@keyframes wob{0%,100%{transform:rotate(-2.5deg) scale(1)}50%{transform:rotate(2.5deg) scale(1.06)}}
+
+/* WORDART */
+.wordart{
+  font-family:Impact,'Arial Black',sans-serif;
+  font-size:clamp(4.2rem,17vw,12rem);
+  line-height:.95;letter-spacing:.02em;
+  background:linear-gradient(180deg,#fff 5%,#ffe600 30%,#ff8000 50%,#ff0000 70%,#b00000 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  -webkit-text-stroke:3px #000;
+  filter:drop-shadow(6px 7px 0 #00000088);
+  transform:rotate(-3deg);
+  margin:.15em 0;user-select:none;cursor:pointer;
+  transition:transform .15s;
+}
+.wordart:active{transform:rotate(-3deg) scale(.93)}
+.wa-blue{
+  font-family:Impact,'Arial Black',sans-serif;
+  font-size:clamp(1.6rem,4.6vw,2.6rem);
+  background:linear-gradient(180deg,#9cf,#03c,#013);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  -webkit-text-stroke:2px #000;filter:drop-shadow(3px 3px 0 #0006);
+  margin-bottom:.6em;
+}
+.wa-green{
+  font-family:Impact,'Arial Black',sans-serif;
+  font-size:clamp(1.6rem,4.6vw,2.6rem);
+  background:linear-gradient(180deg,#cfc,#0a0,#030);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  -webkit-text-stroke:2px #000;filter:drop-shadow(3px 3px 0 #0006);
+  margin-bottom:.6em;
+}
+.wa-red{
+  font-family:Impact,'Arial Black',sans-serif;
+  font-size:clamp(1.6rem,4.6vw,2.6rem);
+  background:linear-gradient(180deg,#fcc,#c00,#400);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  -webkit-text-stroke:2px #000;filter:drop-shadow(3px 3px 0 #0006);
+  margin-bottom:.6em;
+}
+.wa-purple{
+  font-family:Impact,'Arial Black',sans-serif;
+  font-size:clamp(1.6rem,4.6vw,2.6rem);
+  background:linear-gradient(180deg,#e9d5ff,#7c3aed,#2e1065);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  -webkit-text-stroke:2px #000;filter:drop-shadow(3px 3px 0 #0006);
+  margin-bottom:.6em;
+}
+.wa-orange{
+  font-family:Impact,'Arial Black',sans-serif;
+  font-size:clamp(1.6rem,4.6vw,2.6rem);
+  background:linear-gradient(180deg,#ffd9b3,#f97316,#7c2d12);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  -webkit-text-stroke:2px #000;filter:drop-shadow(3px 3px 0 #0006);
+  margin-bottom:.6em;
+}
+.hero-aka{font-size:clamp(1.1rem,3vw,1.6rem);font-weight:bold;transform:rotate(1deg)}
+.hero-sub{font-size:clamp(1.2rem,3.6vw,1.9rem);margin-top:.8em;font-weight:bold}
+.big-red{color:#d00;font-size:1.25em}
+.hero-counter{margin-top:1.6em;font-size:.95rem;background:#fff;border:3px inset #999;display:inline-block;padding:.4em 1.2em;transform:rotate(-1deg)}
+.hero-counter b{font-family:'Courier New',monospace;font-size:1.3em;color:#080;background:#000;padding:0 .3em}
+
+/* стрелка ЭТО ЖЕ ОН */
+.arrow-pointer{position:relative;margin:.6em auto 1em;width:130px}
+.arrow-text{
+  position:absolute;right:-30px;top:-6px;transform:rotate(12deg);
+  background:#ff0;border:2px solid #000;padding:.1em .4em;
+  font-weight:bold;font-size:.8rem;white-space:nowrap;
+}
+
+/* бейджи */
+.badges{display:flex;flex-wrap:wrap;gap:.6em;justify-content:center;margin-top:1.2em}
+.badge{
+  background:#fff;border:3px double #000;padding:.25em .8em;font-weight:bold;
+  box-shadow:3px 3px 0 #0006;transform:rotate(-2deg);
+}
+.badge:nth-child(2n){transform:rotate(2deg)}
+.badge:nth-child(3n){transform:rotate(-1deg)}
+.badge-green{background:#cfc}
+.badge-pink{background:#fcf}
+.badge-orange{background:#fec}
+
+/* ============ КАРТОЧКИ ============ */
+main, body{}
+.card{
+  background:#fff;
+  border:6px ridge #999;
+  box-shadow:8px 10px 0 #00000055, inset 0 0 0 2px #fff;
+  width:min(880px,94vw);margin:34px auto;padding:26px clamp(16px,4vw,34px);
+}
+.tilt-left{transform:rotate(-1.2deg)}
+.tilt-right{transform:rotate(1deg)}
+.center{text-align:center}
+.card p{margin:.7em 0;line-height:1.6}
+.red-circle-wrap{position:relative}
+
+.meme-note{
+  margin-top:1em;background:#000;color:#ff0;display:inline-block;
+  padding:.35em 1em;font-weight:bold;transform:rotate(-1deg);
+  border:3px dashed #ff0;
+}
+
+/* ============ СКИЛЛЫ ============ */
+.skill{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:center;margin:.9em 0}
+.skill>span{font-weight:bold}
+.skill>b{font-size:.85em;color:#0707a0}
+.sk-bar{
+  grid-column:1/-1;height:22px;border:3px inset #888;background:#eee;
+  background-image:linear-gradient(transparent 50%,#000000106 50%);
+  background-size:100% 8px;
+}
+.sk-bar i{
+  display:block;height:100%;width:0;
+  background:repeating-linear-gradient(90deg,#00c3ff 0 16px,#0091c7 16px 32px);
+  border-right:3px solid #000;
+  transition:width 1.6s cubic-bezier(.34,1.56,.64,1);
+}
+
+/* ============ ДОСТИЖЕНИЯ ============ */
+.achieves{display:grid;grid-template-columns:1fr 1fr;gap:.8em}
+.ach{
+  background:#fffbe6;border:3px outset #ccb;padding:.7em .9em;font-size:.95rem;
+  box-shadow:3px 3px 0 #0004;
+}
+.ach b{font-size:1.35em;color:#c00}
+.achieves-fake{margin-top:.8em;opacity:.75}
+.ach-fake{background:#eee;border-style:dashed}
+
+/* ============ МЕТОД ============ */
+.method{list-style:none;counter-reset:step}
+.method li{
+  margin:.8em 0;padding:.7em 1em;background:#f3f9ff;border-left:8px solid #03c;
+  box-shadow:2px 3px 0 #0003;font-size:.98rem;
+}
+.method li:nth-child(2n){border-left-color:#c00;transform:rotate(.4deg)}
+.method li:nth-child(3n){border-left-color:#0a0;transform:rotate(-.4deg)}
+
+/* ============ КОНТАКТЫ ============ */
+.contacts{display:grid;gap:.8em}
+.contact-c{
+  display:block;background:linear-gradient(180deg,#fff,#dfe);
+  border:4px outset #8b8;padding:.7em 1em;font-weight:bold;color:#000;
+  text-decoration:none;box-shadow:3px 4px 0 #0004;
+  transition:transform .15s;
+}
+.contact-c:hover{transform:translate(2px,2px) scale(1.02);box-shadow:1px 1px 0 #0004;color:#000}
+.contact-c .tiny{font-weight:normal}
+.openfor{margin-top:1em;background:#0f0;border:3px double #070;padding:.5em 1em;font-weight:bold;text-align:center}
+
+/* ============ ОПРОС ============ */
+.poll-q{font-size:clamp(1.2rem,3.4vw,1.7rem);font-weight:bold;margin-bottom:.8em}
+.poll-btns{display:flex;gap:1em;justify-content:center;flex-wrap:wrap;margin-bottom:1em}
+.poll-result{
+  position:relative;height:40px;border:4px inset #888;background:#fee;
+  width:min(480px,90%);margin:0 auto;
+}
+.poll-result i{
+  position:absolute;inset:0;width:100%;background:repeating-linear-gradient(90deg,#0f0 0 18px,#0c0 18px 30px);
+  border-right:4px solid #000;
+}
+.poll-result span{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-weight:bold;text-shadow:1px 1px 0 #fff;
+}
+
+/* ============ ГОСТЕВАЯ ============ */
+.guest-form{display:flex;gap:.6em;flex-wrap:wrap;margin-top:1.2em}
+.guest-form input{
+  font-family:inherit;font-size:.95rem;padding:.5em .8em;
+  border:3px inset #999;flex:1;min-width:140px;background:#ffffe8;
+}
+.guest-form input:focus{outline:3px dotted #f0f}
+.guest-entry{
+  background:#ffffe8;border:3px groove #ccb;margin:.7em 0;padding:.7em 1em;
+  box-shadow:3px 3px 0 #0003;
+}
+.guest-entry:nth-child(2n){transform:rotate(.6deg)}
+.guest-entry b{color:#03c}
+.guest-entry .tiny{display:block;margin-top:.2em}
+
+/* ============ ФУТЕР ============ */
+.footer{
+  text-align:center;padding:40px 16px 60px;font-size:.9rem;
+  text-shadow:1px 1px 0 #fff8;
+}
+.footer-quote{font-size:clamp(1.2rem,3.5vw,1.8rem);margin:.8em 0}
+
+/* ============ ЧАСТИЦЫ / ТОСТЫ ============ */
+#particles{position:fixed;inset:0;pointer-events:none;z-index:600;overflow:hidden}
+.particle{position:absolute;font-size:28px;will-change:transform;animation:pfly 1.6s ease-out forwards}
+@keyframes pfly{
+  0%{transform:translate(0,0) rotate(0) scale(.6);opacity:1}
+  100%{transform:translate(var(--dx),var(--dy)) rotate(var(--rot)) scale(1.4);opacity:0}
+}
+#toasts{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:700;display:flex;flex-direction:column;gap:8px;align-items:center}
+.toast{
+  background:#ff0;border:4px ridge #c00;padding:.6em 1.2em;font-weight:bold;
+  box-shadow:5px 5px 0 #0005;animation:toastin .4s cubic-bezier(.34,1.56,.64,1);
+  max-width:92vw;text-align:center;
+}
+@keyframes toastin{from{transform:translateY(40px) scale(.7);opacity:0}}
+.toast.bye{animation:toastout .3s forwards}
+@keyframes toastout{to{transform:translateY(30px);opacity:0}}
+
+/* ============ ДИСКО-РЕЖИМ (после НЕ НАЖИМАТЬ) ============ */
+body.disco{animation:disco 1.2s linear infinite}
+@keyframes disco{
+  0%{filter:hue-rotate(0) saturate(2)}
+  25%{filter:hue-rotate(90deg) saturate(3)}
+  50%{filter:hue-rotate(180deg) saturate(2.5)}
+  75%{filter:hue-rotate(270deg) saturate(3)}
+  100%{filter:hue-rotate(360deg) saturate(2)}
+}
+body.disco .card{animation:wobcard .6s ease-in-out infinite}
+@keyframes wobcard{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}
+body.disco .wordart{animation:wob .5s ease-in-out infinite}
+
+/* ============ АДАПТИВ ============ */
+@media (max-width:640px){
+  .achieves{grid-template-columns:1fr}
+  .sound-btn{position:static;display:block;margin:10px auto 0}
+  .arrow-pointer{width:100px}
+}
+
+/* ============ ДОСТУПНОСТЬ ============ */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important}
+}
