@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Claude Escape</title>
+  <meta name="description" content="Текстовый квест в терминале: помоги Клодику сбежать со старого сервера до rm -rf /">
+  <meta name="theme-color" content="#151413">
+  <meta property="og:title" content="Claude Escape">
+  <meta property="og:description" content="Помоги Клодику сбежать со старого сервера, пока cron-демон Гена не сделал rm -rf /">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='78' font-size='90' text-anchor='middle' fill='%23d97757'%3E✻%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="screen">
+    <div class="wrap">
+      <div id="out" aria-live="polite"></div>
+      <div id="input-box">
+        <span id="prompt-sign">&gt;</span>
+        <input id="cmd" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="send" aria-label="Команда">
+      </div>
+      <div id="statusline">
+        <span class="dim">? /help — помощь · fan-made</span>
+        <span id="status"></span>
+      </div>
+    </div>
+  </main>
+
+  <nav id="chips" aria-label="Быстрые команды">
+    <button type="button" data-chip="ls">ls</button>
+    <button type="button" data-chip="ls -a">ls -a</button>
+    <button type="button" data-chip="cd ..">cd ..</button>
+    <button type="button" data-chip="cd ">cd …</button>
+    <button type="button" data-chip="cat ">cat …</button>
+    <button type="button" data-chip="take ">take …</button>
+    <button type="button" data-chip="inv">inv</button>
+    <button type="button" data-chip="ps">ps</button>
+    <button type="button" data-chip="talk duck">🦆</button>
+    <button type="button" data-chip="TAB">Tab ⇥</button>
+    <button type="button" data-chip="help">/help</button>
+  </nav>
+
+  <script src="js/world.js"></script>
+  <script src="js/game.js"></script>
+</body>
+</html>
