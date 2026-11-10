@@ -1,19 +1,4 @@
 'use strict';
-const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-const canvas = document.querySelector('#orb');
-const ctx = canvas.getContext('2d');
-let width=0,height=0,angle=.3,tilt=-.24,dragging=false,lastX=0,lastY=0,visible=true,frame=0;
-const points = Array.from({length:1900},(_,i)=>{const y=1-2*i/1899;const r=Math.sqrt(1-y*y);const theta=i*Math.PI*(3-Math.sqrt(5));return {x:Math.cos(theta)*r,y,z:Math.sin(theta)*r};});
-function size(){const box=canvas.getBoundingClientRect();width=box.width;height=box.height;const dpr=Math.min(devicePixelRatio||1,2);canvas.width=width*dpr;canvas.height=height*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);draw();}
-function draw(){ctx.clearRect(0,0,width,height);const r=Math.min(width*.405,height*.385),cx=width*.49,cy=height*.47;const ca=Math.cos(angle),sa=Math.sin(angle),ct=Math.cos(tilt),st=Math.sin(tilt);const projected=points.map(p=>{const x=p.x*ca+p.z*sa,z=-p.x*sa+p.z*ca;return {x,y:p.y*ct-z*st,z:p.y*st+z*ct};}).sort((a,b)=>a.z-b.z);ctx.strokeStyle='#64763a30';ctx.lineWidth=.6;ctx.beginPath();ctx.ellipse(cx,cy,r*1.2,r*.3,-.45,0,Math.PI*2);ctx.stroke();for(const p of projected){const s=2.8/(2.8-p.z*.28);const cut=Math.abs(p.y+Math.sin(p.x*5+angle)*.055)<.038;ctx.fillStyle=cut?'#f0ffd5':`rgba(197,241,105,${.12+(p.z+1)*.39})`;ctx.beginPath();ctx.arc(cx+p.x*r*s,cy+p.y*r*s,(cut?1.9:1.05)*(p.z+2)/2,0,Math.PI*2);ctx.fill();}ctx.strokeStyle='#a5c46655';ctx.beginPath();ctx.moveTo(cx-r*1.16,cy);ctx.lineTo(cx-r*.97,cy);ctx.moveTo(cx+r*.97,cy);ctx.lineTo(cx+r*1.16,cy);ctx.stroke();}
-let previous=0;function animate(time){frame=0;if(!visible||document.hidden||reducedMotion.matches)return;if(time-previous>32){if(!dragging)angle+=.003;draw();previous=time;}frame=requestAnimationFrame(animate);}
-function start(){if(!frame&&visible&&!document.hidden&&!reducedMotion.matches)frame=requestAnimationFrame(animate);}
-new ResizeObserver(size).observe(canvas);
-new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)start();}).observe(canvas);
-document.addEventListener('visibilitychange',start);reducedMotion.addEventListener('change',()=>{draw();start();});
-canvas.addEventListener('pointerdown',e=>{dragging=true;lastX=e.clientX;lastY=e.clientY;canvas.setPointerCapture(e.pointerId);});
-canvas.addEventListener('pointermove',e=>{if(!dragging)return;angle+=(e.clientX-lastX)*.008;tilt+=(e.clientY-lastY)*.005;lastX=e.clientX;lastY=e.clientY;document.querySelector('#coord').textContent=angle.toFixed(3);draw();});
-for(const event of ['pointerup','pointercancel','lostpointercapture'])canvas.addEventListener(event,()=>dragging=false);
 const terminal=document.querySelector('#terminal'),input=document.querySelector('#term-input'),output=document.querySelector('#term-output');
 function openTerminal(){if(!terminal.open)terminal.showModal();input.focus();}
 document.querySelectorAll('[data-terminal]').forEach(button=>button.addEventListener('click',openTerminal));
@@ -23,3 +8,6 @@ const responses={help:'Доступные команды:\n  whoami — об а�
 document.querySelector('#term-form').addEventListener('submit',e=>{e.preventDefault();const command=input.value.trim().slice(0,200);input.value='';if(!command)return;if(command.toLowerCase()==='exit'){terminal.close();return;}if(command.toLowerCase()==='clear'){output.replaceChildren();return;}const prompt=document.createElement('p');prompt.className='terminal-command';prompt.textContent='visitor:~$ '+command;const answer=document.createElement('p');answer.textContent=responses[command.toLowerCase()]||'Команда не найдена. Введи help.';output.append(prompt,answer);output.scrollTop=output.scrollHeight;});
 document.querySelector('#copy-contact').addEventListener('click',async()=>{const status=document.querySelector('#copy-status');try{await navigator.clipboard.writeText('https://t.me/noxad');status.textContent='Контакт скопирован: t.me/noxad';}catch{status.textContent='Контакт: https://t.me/noxad';}});
 document.querySelector('#year').textContent=new Date().getFullYear();
+
+const perspective=document.querySelector('#perspective');
+perspective.addEventListener('click',()=>{const active=perspective.getAttribute('aria-pressed')!=='true';perspective.setAttribute('aria-pressed',String(active));document.querySelector('.eye-poster').classList.toggle('inverted',active);});
