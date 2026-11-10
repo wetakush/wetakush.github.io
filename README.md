@@ -1,63 +1,31 @@
-# wetakush // fsociety
+# wetakush — personal archive
 
-Био-лендинг в стиле фонк-эдита с отсылками к fsociety (Mr. Robot).
-Один экран — одна идеология: **control is an illusion**.
+Personal portfolio for security research and software development.
 
-## Что внутри
+Live: https://wetakush.github.io/
 
-- **Видео-фон в hero** — Mr. Robot эдит («Sometimes i dream of saving the world») за текстом:
-  затемнение градиентом, mute, луп, и видео **глитчится в такт музыке** (слайсы, инверсия, hue-shift на бурстах)
-- **Boot-последовательность** — BIOS-загрузка fsociety при входе (клик = запуск со звуком)
-- **Музыка синтезируется в браузере** через Web Audio API — без единого mp3:
-  - `PHONK://FSOCIETY` — 140 BPM: ковбелл-мелодия, дисторшн-808, виниловый треск
-  - `VOID://DAEMON` — тёмный эмбиент: дроны, сердцебиение, колокола с ревером
-- **Бит-синхронизированный визуал**: экран пульсирует под кик, глитч-блоки-артефакты на каждый такт,
-  burst со тряской и разрывом видео каждые 8 тактов
-- **CRT-эстетика**: сканлайны, шум (усиливается на бите), виньетка, RGB-split
-- **Параллакс мыши** в hero + zoom-пульс видео + scroll-fade контента
-- **Трейл курсора** — 7 глитч-квадратов тянется за прицелом
-- **VHS-лейбл** `▶ PLAY SP 0:00:12` в углу hero
-- **Интерактивный терминал** — кнопка `[ TERMINAL ~ ]` или клавиша `` ` ``
-  - попробуй: `help`, `cat flag.txt`, `ls`, `fsociety`, `matrix`, `sudo rm -rf /`
-- **Матрица-дождь**, REC-таймер, параллакс-слова, scramble-счётчики, сетка-терминал в скиллах,
-  RGB-glitч на hover заголовков и контактов
+## Development
 
-## Файлы
+Static HTML, CSS and JavaScript; no build or dependencies required.
 
-```
-index.html      — разметка и контент
-style.css       — все эффекты и стили
-script.js       — аудио-движок, терминал, визуал
-media/hero.mp4  — видео-фон (h264, без аудио, faststart)
+```sh
+python3 -m http.server 4173
 ```
 
-Внешних зависимостей нет (только Google Fonts с graceful fallback —
-без интернета сайт переключается на системные шрифты).
+Open http://localhost:4173. The homepage is `index.html`, with `style.css` and `script.js`.
 
-## Запуск
+## Features
 
-Просто открой `index.html`, или:
+- Responsive typography and dark / lime visual identity
+- Interactive canvas sphere with pointer rotation
+- Native expandable expertise sections
+- Portfolio terminal: Ctrl/Cmd + K; `help`, `whoami`, `skills`, `contact`, `research`, `clear`, `exit`
+- Contact copy button with fallback
+- Keyboard navigation, modal focus handling, reduced-motion support
+- Animation pauses outside the viewport and in background tabs
 
-```bash
-python3 -m http.server 8000
-# http://localhost:8000
-```
+The existing `/trashbio/`, `/claude/`, feed, verification files and media are retained.
 
-## Деплой на GitHub Pages
+## Deployment
 
-```bash
-git init && git add . && git commit -m "fsociety is awake"
-git remote add origin git@github.com:wetakush/fsociety_bio.git
-git push -u origin main
-# Settings → Pages → Deploy from branch → main / root
-```
-
-## Заметки
-
-- Аудио стартует после первого клика (политика автоплея браузеров)
-- `prefers-reduced-motion` уважается: глитчи/тряска отключаются
-- Пасхалки: исходник index.html, `cat .secret/`, `.secret` в терминале
-
----
-
-*we are fsociety. we are finally free. we are finally awake.*
+GitHub Pages publishes the root of `main`. Push the reviewed static files to deploy.

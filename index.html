@@ -1,267 +1,36 @@
 <!doctype html>
-<!--
-
-    ░█░█░█▀█░█▀▀░█▀▄▀█░█▀▀░░░█░█░█▀█░█▀▀░█▀▄▀█░█▀▀
-    ░█▀█░█░█░█▀▀░█░▀░█░█▀▀░░░█▀█░█░█░█▀▀░█░▀░█░█▀▀
-    ░▀░▀░▀▀▀░▀▀▀░▀░░░▀░▀▀▀░░░▀░▀░▀▀▀░▀▀▀░▀░░░▀░▀▀▀
-
-    hey. ты читаешь исходники. уважаю.
-    control is an illusion.
-    fsociety{st1ll_r34d1ng_s0urc3}
-
--->
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>wetakush // fsociety</title>
-<meta name="description" content="вета aka wetakush — security researcher & software developer. bug bounty hunter. we are fsociety.">
-<meta name="theme-color" content="#050505">
-<meta property="og:title" content="wetakush // fsociety">
-<meta property="og:description" content="security researcher & software developer. breaking systems to make them stronger.">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary">
-<link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" fill="black"/><text x="32" y="46" font-size="38" text-anchor="middle" fill="%2300ff41" font-family="monospace" font-weight="bold">f</text></svg>'>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>wetakush — security research & development</title>
+<meta name="description" content="вета aka wetakush. Исследую безопасность, нахожу уязвимости, создаю инструменты. Offensive security & software development.">
+<meta name="theme-color" content="#10110e"><meta property="og:title" content="wetakush — beyond the surface"><meta property="og:description" content="Security researcher & software developer. Нахожу то, что скрыто под поверхностью."><meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23d5ff5f'/%3E%3Ctext x='8' y='46' font-family='monospace' font-size='44' font-weight='bold'%3Ew%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"><script src="script.js" defer></script>
 </head>
 <body>
-
-<div id="boot" aria-hidden="true">
-  <pre id="bootText"></pre>
-  <div id="bootHint">[ click here to start ]</div>
-  <div id="bootSkip">esc / клик — пропуск</div>
-</div>
-
-<canvas id="noise"></canvas>
-<div id="scanlines"></div>
-<div id="vignette"></div>
-<canvas id="matrix"></canvas>
-<div id="flash"></div>
-<div id="glitchBlocks"></div>
-<div id="cursor"><span id="cursorDot"></span></div>
-
-<div class="stage" id="stage">
-
-  <header class="topbar">
-    <span class="rec"><i></i>REC <b id="recTimer">00:00:00</b></span>
-    <span class="topbar-mid">wetakush@fsociety:~$ <b class="blink">▮</b></span>
-    <button id="termToggle" title="терминал [`]">[ TERMINAL ~ ]</button>
-  </header>
-
-  <main>
-
-    <section class="hero" id="hero">
-      <div class="hero-video" id="heroVideoWrap" aria-hidden="true">
-        <video id="heroVideo" src="media/hero.mp4" autoplay muted loop playsinline preload="auto" disablepictureinpicture></video>
-        <div class="vid-dim"></div>
-        <div class="vid-flash" id="vidFlash"></div>
-      </div>
-      <canvas id="viz"></canvas>
-      <div class="hero-inner" id="heroInner">
-        <div class="hero-label reveal">// target locked - субъект идентифицирован</div>
-        <h1 class="hero-title glitch" id="heroTitle" data-text="WETAKUSH">WETAKUSH</h1>
-        <div class="hero-sub reveal">&gt;&gt; security researcher &amp; software developer</div>
-        <p class="hero-tag reveal">нахожу уязвимости, которые другие пропускают.<br>пишу код, который сложно сломать.</p>
-        <div class="hero-chips reveal">
-          <span class="chip">BUG&nbsp;BOUNTY</span>
-          <span class="chip chip-red">PENTEST</span>
-          <span class="chip">FULL-STACK</span>
-          <span class="chip chip-red">OSINT</span>
-        </div>
-        <div class="hero-quote reveal">«control is an illusion. <span class="scr">security isn't.»</span></div>
-      </div>
-      <div class="vhs-label" aria-hidden="true"><i>▶</i>&nbsp;PLAY&nbsp;&nbsp;SP&nbsp;&nbsp;<b id="vhsTimer">0:00:00</b></div>
-      <div class="hero-scroll" id="heroScroll">SCROLL&nbsp;TO&nbsp;DECRYPT&nbsp;<b>▼</b></div>
-    </section>
-
-    <!-- ===== БЕГУЩАЯ СТРОКА ===== -->
-    <div class="ticker" aria-hidden="true"><div class="ticker-in" id="tickerIn">
-      <span>FUCK SOCIETY ✦ TRUST NO ONE ✦ CONTROL IS AN ILLUSION ✦ WE ARE FSOCIETY ✦ BREAK IT TO FIX IT ✦ HELLO, FRIEND ✦ 0-DAY EVERY DAY ✦ WAKE UP, ELLIOT ✦&nbsp;</span>
-    </div></div>
-
-    <!-- ===== 00 ABOUT ===== -->
-    <section class="sec" id="about" data-word="WHOAMI">
-      <div class="wrap">
-        <div class="sec-head reveal"><span class="sec-num">00</span><h2>WHOAMI</h2><span class="sec-path">~/about</span></div>
-        <div class="about-grid">
-          <div class="about-text reveal">
-            <p>Привет, я <b>вета</b>. Живу на стыке двух миров: <span class="g">наступательной безопасности</span> и <span class="g">разработки</span>. Участвую в Bug Bounty на платформах <a href="https://bugbounty.bi.zone/profile/wetakush" target="_blank" rel="noopener">BI.ZONE</a> и <a href="https://standoff365.com/profile/wetakush/" target="_blank" rel="noopener">Standoff&nbsp;365</a> — ловлю баги в реальных продакшн-системах.</p>
-            <p>Пишу на Python, C++, C# и веб-стеке. Понимаю, как системы устроены изнутри — от низкоуровневого кода до веб-приложений. Поэтому нахожу уязвимости там, где другие даже не ищут.</p>
-            <p class="red">Мой подход — глубокое понимание технологий, а не поверхностное сканирование.</p>
-          </div>
-          <div class="about-json reveal">
-            <div class="win-head"><i></i><i></i><i></i><span>~/profile.json</span></div>
-            <pre id="jsonCode">{
-  "handle": "wetakush",
-  "name": "вета",
-  "role": [
-    "Security Researcher",
-    "Software Developer",
-    "Bug Bounty Hunter"
-  ],
-  "focus": "Offensive Security",
-  "platforms": [
-    "BI.ZONE Bug Bounty",
-    "Standoff 365 Bug Bounty"
-  ],
-  "alignment": "chaotic neutral"
-}</pre>
-          </div>
-        </div>
-        <div class="stats">
-          <div class="stat reveal"><b class="counter" data-val="6" data-suffix="+">0</b><span>языков<br>программирования</span></div>
-          <div class="stat reveal"><b class="counter" data-val="2">0</b><span>bug bounty<br>платформы</span></div>
-          <div class="stat stat-red reveal"><b><span class="counter" data-val="181" data-prefix="#">">#0</span></b><span>ранг<br>Standoff 365</span></div>
-          <div class="stat stat-red reveal"><b class="counter" data-val="16100">0</b><span>очков<br>на счету</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 01 SKILLS ===== -->
-    <section class="sec" id="skills" data-word="ARSENAL">
-      <div class="wrap">
-        <div class="sec-head reveal"><span class="sec-num">01</span><h2>ARSENAL</h2><span class="sec-path">~/skills</span></div>
-        <div class="skills-grid">
-          <div class="skill reveal">
-            <div class="skill-top"><span class="skill-name">PYTHON</span><span class="skill-pct">0%</span></div>
-            <div class="bar"><i data-val="92"></i></div>
-            <p>автоматизация, скрипты для пентеста, разработка инструментов, бэкенд</p>
-          </div>
-          <div class="skill reveal">
-            <div class="skill-top"><span class="skill-name">PENTEST / WEB</span><span class="skill-pct">0%</span></div>
-            <div class="bar"><i data-val="90"></i></div>
-            <p>OWASP Top 10, Burp Suite, ручной анализ, hunting за багами</p>
-          </div>
-          <div class="skill reveal">
-            <div class="skill-top"><span class="skill-name">HTML / CSS / JS</span><span class="skill-pct">0%</span></div>
-            <div class="bar"><i data-val="88"></i></div>
-            <p>фронтенд, анализ веб-приложений, XSS/CSRF и клиентские уязвимости</p>
-          </div>
-          <div class="skill reveal">
-            <div class="skill-top"><span class="skill-name">OSINT &amp; RECON</span><span class="skill-pct">0%</span></div>
-            <div class="bar"><i data-val="84"></i></div>
-            <p>разведка, сбор информации, анализ поверхности атаки</p>
-          </div>
-          <div class="skill reveal">
-            <div class="skill-top"><span class="skill-name">C++ / C#</span><span class="skill-pct">0%</span></div>
-            <div class="bar"><i data-val="76"></i></div>
-            <p>низкоуровневая разработка, реверс-инжиниринг, системное программирование</p>
-          </div>
-          <div class="skill reveal">
-            <div class="skill-top"><span class="skill-name">DEVOPS &amp; TOOLS</span><span class="skill-pct">0%</span></div>
-            <div class="bar"><i data-val="72"></i></div>
-            <p>linux, git, docker, networking, bash scripting</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 02 SECURITY ===== -->
-    <section class="sec" id="security" data-word="WARZONE">
-      <div class="wrap">
-        <div class="sec-head reveal"><span class="sec-num">02</span><h2>WARZONE</h2><span class="sec-path">~/security</span></div>
-        <div class="quote-big reveal">break the system.<br><span class="outline">earn the trust.</span> patch it back.</div>
-        <div class="cards">
-          <a class="card reveal" href="https://bugbounty.bi.zone/profile/wetakush" target="_blank" rel="noopener">
-            <div class="card-tag">BUG BOUNTY</div>
-            <h3>BI.ZONE</h3>
-            <p>Active Security Researcher</p>
-            <div class="card-foot">view profile →<span class="card-arrow">↗</span></div>
-          </a>
-          <a class="card card-red reveal" href="https://standoff365.com/profile/wetakush/" target="_blank" rel="noopener">
-            <div class="card-tag">BUG BOUNTY</div>
-            <h3>STANDOFF 365</h3>
-            <p>Active Security Researcher</p>
-            <div class="card-stats">
-              <div><b class="counter" data-val="181" data-prefix="#">#0</b><span>rank</span></div>
-              <div><b class="counter" data-val="16100">0</b><span>points</span></div>
-              <div><b>2025</b><span>since</span></div>
-            </div>
-            <div class="card-foot">view profile →<span class="card-arrow">↗</span></div>
-          </a>
-        </div>
-        <div class="chips-cloud reveal" id="chipsCloud">
-          <span class="tag">Web App Sec</span><span class="tag">API Security</span><span class="tag">Auth Bypass</span>
-          <span class="tag">IDOR</span><span class="tag">SQLi</span><span class="tag">XSS</span><span class="tag">SSRF</span>
-          <span class="tag">CSRF</span><span class="tag">Business Logic</span><span class="tag">Access Control</span>
-          <span class="tag">Info Disclosure</span><span class="tag">Race Conditions</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 03 METHODOLOGY ===== -->
-    <section class="sec" id="method" data-word="KILLCHAIN">
-      <div class="wrap">
-        <div class="sec-head reveal"><span class="sec-num">03</span><h2>KILL&nbsp;CHAIN</h2><span class="sec-path">~/methodology.sh</span></div>
-        <div class="steps">
-          <div class="step reveal"><span class="step-num">01</span><h3>RECONNAISSANCE</h3><p>глубокий сбор информации о цели, маппинг поверхности атаки</p></div>
-          <div class="step reveal"><span class="step-num">02</span><h3>ANALYSIS</h3><p>ручной анализ логики приложения, поиск нестандартных векторов</p></div>
-          <div class="step reveal"><span class="step-num">03</span><h3>EXPLOITATION</h3><p>разработка PoC, подтверждение импакта уязвимости</p></div>
-          <div class="step reveal"><span class="step-num">04</span><h3>REPORTING</h3><p>детальный отчёт с шагами воспроизведения и рекомендациями</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== ВТОРАЯ СТРОКА ===== -->
-    <div class="ticker ticker-rev" aria-hidden="true"><div class="ticker-in">
-      <span>WE ARE FSOCIETY ✦ WE ARE FINALLY FREE ✦ WE ARE FINALLY AWAKE ✦ Я НАШЁЛ БАГ В ТВОЁМ МЫШЛЕНИИ ✦ TRUST NO ONE ✦&nbsp;</span>
-    </div></div>
-
-    <!-- ===== 04 CONTACT ===== -->
-    <section class="sec" id="contact" data-word="CONNECT">
-      <div class="wrap">
-        <div class="sec-head reveal"><span class="sec-num">04</span><h2>CONNECT</h2><span class="sec-path">~/contact</span></div>
-        <p class="contact-note reveal">открыт для сотрудничества, приватных программ и интересных проектов.</p>
-        <div class="contacts">
-          <a class="contact-link reveal" href="https://t.me/noxad" target="_blank" rel="noopener"><span class="cl-idx">01</span><span class="cl-name">TELEGRAM</span><span class="cl-hint">@noxad ↗</span></a>
-          <a class="contact-link reveal" href="https://github.com/wetakush" target="_blank" rel="noopener"><span class="cl-idx">02</span><span class="cl-name">GITHUB</span><span class="cl-hint">wetakush ↗</span></a>
-          <a class="contact-link reveal" href="https://bugbounty.bi.zone/profile/wetakush" target="_blank" rel="noopener"><span class="cl-idx">03</span><span class="cl-name">BUG BOUNTY</span><span class="cl-hint">BI.ZONE ↗</span></a>
-          <a class="contact-link reveal" href="https://standoff365.com/profile/wetakush/" target="_blank" rel="noopener"><span class="cl-idx">04</span><span class="cl-name">BUG BOUNTY</span><span class="cl-hint">STANDOFF 365 ↗</span></a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-      <pre class="mask reveal" aria-hidden="true">
-   ┌─────────────────────┐
-   │  ░░░░░░░░░░░░░░░░░  │
-   │  ░  ▄▄       ▄▄  ░  │
-   │  ░  ▀▀       ▀▀  ░  │
-   │  ░                 ░│
-   │  ░      ▄▄▄▄▄     ░ │
-   │  ░     ▐░░░░░░▌    ░│
-   │  ░                 ░│
-   └─────────────────────┘</pre>
-      <div class="footer-quote reveal">we are fsociety.<br>we are finally free.<br><b>we are finally awake.</b></div>
-      <div class="footer-cmd">$ echo "designed &amp; built by <b>wetakush</b>" <span class="blink">▮</span></div>
-      <div class="footer-alt"><a href="/trashbio/">терпеть не могу красивые сайты →</a></div>
-      <div class="footer-hello">hello, friend.</div>
-    </footer>
-
-  </main>
-</div>
-
-<!-- ===== ПЛЕЕР ===== -->
-<div id="player">
-  <button id="plPlay" title="play / pause">▶</button>
-  <button id="plTrack" title="сменить трек">PHONK://FSOCIETY</button>
-  <canvas id="eq" width="52" height="22"></canvas>
-  <input id="plVol" type="range" min="0" max="100" value="70" title="громкость">
-</div>
-
-<!-- ===== ТЕРМИНАЛ ===== -->
-<div id="terminal" aria-hidden="true">
-  <div class="term-head"><span>wetakush@fsociety: ~ — bash</span><button id="termClose">✕</button></div>
-  <div class="term-body">
-    <div id="termOut"></div>
-    <div class="term-line"><span class="term-prompt">wetakush@fsociety:~$</span><input id="termIn" autocomplete="off" spellcheck="false"></div>
-  </div>
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
+<a class="skip" href="#about">К содержанию</a>
+<header class="header"><a href="#" class="brand" aria-label="wetakush — главная">w<span class="brand-star">✳</span></a><nav aria-label="Основная навигация"><a href="#about">Об авторе</a><a href="#expertise">Экспертиза</a><a href="#research">Research</a></nav><a class="header-contact" href="#contact">На связи <span>↗</span></a></header>
+<main>
+<section class="hero" aria-labelledby="hero-title">
+<div class="hero-top mono"><span><i class="status-dot"></i> INDEPENDENT SECURITY RESEARCHER</span><span class="edition">PERSONAL ARCHIVE / VOL. 01</span></div>
+<div class="hero-main"><div class="hero-copy"><p class="eyebrow mono">HELLO, FRIEND. / Я — ВЕТА</p><h1 id="hero-title">Beyond<br>the <em>surface.</em></h1><p class="hero-description">Нахожу то, что скрыто под поверхностью.<br>Исследую безопасность. Пишу код.<br>Проверяю системы на прочность.</p><a class="button" href="#research">Исследовать <span>↗</span></a></div>
+<div class="orb-scene"><canvas id="orb" aria-label="Интерактивная сфера — визуализация поверхности атаки"></canvas><div class="orb-label mono"><span>FIG. 001 — ATTACK SURFACE</span><span>DRAG TO ROTATE ↔</span></div><div class="orb-coordinate mono" aria-hidden="true">X <span id="coord">0.024</span><br>Y 0.871<br>Z 0.063</div><span class="orb-plus plus-one" aria-hidden="true">+</span><span class="orb-plus plus-two" aria-hidden="true">+</span></div></div>
+<div class="hero-bottom"><span class="mono">OFFENSIVE SECURITY<br>& SOFTWARE DEVELOPMENT</span><a href="#about" class="scroll-link mono">SCROLL TO EXPLORE <span>↓</span></a><button class="terminal-launch mono" data-terminal>~/ open terminal <kbd>⌘ K</kbd></button></div>
+<div class="wordmark" aria-hidden="true">wetakush<span>®</span></div>
+</section>
+<div class="discipline mono"><span>BREAK TO UNDERSTAND</span><span>✳</span><span>BUILD TO PROTECT</span><span>✳</span><span>QUESTION EVERYTHING</span><span>✳</span><span>CONTROL IS AN ILLUSION</span><span>✳</span></div>
+<section class="section about" id="about"><div class="section-label mono"><span>01 / WHOAMI</span><span>ЧЕЛОВЕК ЗА НИКОМ</span></div><div class="about-grid"><h2>Любопытство —<br>мой главный<br><span class="muted">инструмент.</span></h2><div class="about-copy"><p class="large">Живу на стыке двух миров: наступательной безопасности и разработки.</p><p>Я вета, aka wetakush. Ищу уязвимости в реальных системах на BI.ZONE и Standoff 365. Мне интересно, что происходит за интерфейсом: как устроена логика, где заканчивается доверие и что разработчик не предусмотрел.</p><p>Пишу на Python, C++, C# и веб-стеке. Разбираюсь в системе изнутри, чтобы увидеть то, что пропускает сканер.</p><div class="signature"><span>wetakush</span><span class="mono">RESEARCHER.<br>DEVELOPER. ALWAYS CURIOUS.</span></div></div></div></section>
+<section class="section expertise" id="expertise"><div class="section-label mono"><span>02 / EXPERTISE</span><span>ОТ ПОВЕРХНОСТИ — К СУТИ</span></div><div class="section-title"><h2>Знаю, где искать.<br><span class="muted">И как создавать.</span></h2><span class="asterisk" aria-hidden="true">✳</span></div><div class="expertise-list">
+<details open><summary><span class="mono row-num">01</span><h3>Offensive security</h3><span class="row-tag mono">BREAK</span><span class="expand">+</span></summary><div class="detail-body"><p>Ручной анализ веб-приложений и API. Ищу ошибки авторизации, бизнес-логики и границ доверия. От гипотезы — до воспроизводимого PoC.</p><div class="tags mono"><span>WEB & API</span><span>BURP SUITE</span><span>OWASP</span><span>IDOR / SSRF / XSS</span></div></div></details>
+<details><summary><span class="mono row-num">02</span><h3>Software development</h3><span class="row-tag mono">BUILD</span><span class="expand">+</span></summary><div class="detail-body"><p>Создаю инструменты для исследования, автоматизирую рутину и разрабатываю приложения. От системного кода до интерфейса в браузере.</p><div class="tags mono"><span>PYTHON</span><span>C++ / C#</span><span>JAVASCRIPT</span><span>HTML / CSS</span></div></div></details>
+<details><summary><span class="mono row-num">03</span><h3>Recon & reverse engineering</h3><span class="row-tag mono">EXPLORE</span><span class="expand">+</span></summary><div class="detail-body"><p>Собираю контекст, исследую поверхность атаки и разбираю внутреннюю механику систем. Чем точнее карта, тем интереснее находки.</p><div class="tags mono"><span>OSINT</span><span>LINUX</span><span>NETWORKING</span><span>REVERSE ENGINEERING</span></div></div></details>
+</div></section>
+<section class="section research" id="research"><div class="section-label mono"><span>03 / FIELD WORK</span><span>RESEARCH IN THE WILD</span></div><div class="section-title"><h2>Break the system.<br><span class="muted">Earn the trust.</span></h2><p>Реальные программы.<br>Реальные системы.<br>Ответственное раскрытие.</p></div><div class="research-grid"><a class="research-card light-card" href="https://bugbounty.bi.zone/profile/wetakush" target="_blank" rel="noopener"><div class="card-top mono"><span>01 / BUG BOUNTY PLATFORM</span><span>↗</span></div><div class="zone-art" aria-hidden="true"><i></i><i></i><i></i><i></i></div><h3>BI.ZONE</h3><div class="card-bottom"><span>Security researcher</span><span class="mono">ОТКРЫТЬ ПРОФИЛЬ ↗</span></div></a><a class="research-card dark-card" href="https://standoff365.com/profile/wetakush/" target="_blank" rel="noopener"><div class="card-top mono"><span>02 / BUG BOUNTY PLATFORM</span><span>↗</span></div><div class="standoff-art" aria-hidden="true"><span>365</span><i></i></div><h3>STANDOFF 365</h3><div class="card-bottom"><span>Security researcher</span><span class="mono">ОТКРЫТЬ ПРОФИЛЬ ↗</span></div></a></div></section>
+<section class="section method" id="method"><div class="section-label mono"><span>04 / THE PROCESS</span><span>НИКАКОЙ МАГИИ. ТОЛЬКО МЕТОД.</span></div><h2>Глубже, чем сканирование.</h2><div class="steps"><article><span class="mono">01 / DISCOVER</span><h3>Разведка</h3><p>Изучаю цель, собираю контекст и строю карту поверхности атаки.</p></article><article><span class="mono">02 / UNDERSTAND</span><h3>Анализ</h3><p>Разбираю логику приложения и проверяю нестандартные гипотезы.</p></article><article><span class="mono">03 / VALIDATE</span><h3>Подтверждение</h3><p>Создаю PoC и показываю реальное влияние уязвимости.</p></article><article><span class="mono">04 / IMPROVE</span><h3>Отчёт</h3><p>Описываю воспроизведение и рекомендации по устранению.</p></article></div></section>
+<section class="contact section" id="contact"><div class="section-label mono"><span>05 / START A CONVERSATION</span><span><i class="status-dot"></i> OPEN TO COLLABORATION</span></div><p>Приватная программа, интересный проект<br>или просто хороший вопрос?</p><a class="contact-title" href="https://t.me/noxad" target="_blank" rel="noopener">Let's talk.<span>↗</span></a><div class="contact-bottom"><a href="https://t.me/noxad" target="_blank" rel="noopener">Telegram <span>@noxad ↗</span></a><a href="https://github.com/wetakush" target="_blank" rel="noopener">GitHub <span>wetakush ↗</span></a><button id="copy-contact">Скопировать контакт <span>⧉</span></button></div><p class="copy-status mono" id="copy-status" role="status"></p></section>
+</main><footer class="footer mono"><span>© <span id="year">2026</span> WETAKUSH</span><a href="/trashbio/">ДРУГАЯ СТОРОНА ИНТЕРНЕТА ↗</a><span>CONTROL IS AN ILLUSION.</span><a href="#">НАВЕРХ ↑</a></footer>
+<dialog id="terminal"><form method="dialog" class="term-head mono"><span><i class="status-dot"></i> wetakush@archive: ~</span><button aria-label="Закрыть терминал">✕</button></form><div id="term-output" class="mono" role="log" aria-live="polite"><p>Hello, friend. Это интерактивный терминал портфолио.<br>Введи <b>help</b>, чтобы посмотреть команды.</p></div><form id="term-form" class="term-input mono"><label for="term-input">visitor:~$</label><input id="term-input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Команда терминала"></form></dialog>
+<!-- fsociety{curiosity_is_the_real_exploit} -->
+</body></html>
