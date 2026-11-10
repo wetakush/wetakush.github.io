@@ -1,31 +1,22 @@
-# wetakush — personal archive
-
-Personal portfolio for security research and software development.
+# wetakush — research environment
 
 Live: https://wetakush.github.io/
 
-## Development
+Static HTML, CSS and JavaScript. No build dependencies.
 
-Static HTML, CSS and JavaScript; no build or dependencies required.
+## Local preview
 
 ```sh
 python3 -m http.server 4173
 ```
 
-Open http://localhost:4173. The homepage is `index.html`, with `style.css` and `script.js`.
+## Interactions
 
-## Features
+- Web / API / Source controls change the active node and inspector.
+- Canvas nodes can also be selected with a pointer; equivalent buttons support keyboard use.
+- Staggered scene assembly, eased node elevation and lighting, selection waves, moving signal packets and a scanning ground plane.
+- Pointer-responsive console tilt and lighting on devices with a mouse.
+- Motion control pauses animations; reduced-motion preference is respected automatically.
+- Canvas animation stops when offscreen or when the page is hidden.
 
-- Editorial layout with paper, charcoal and vermilion palette
-- Original SVG eye engraving with an alternate perspective
-- Russian-first content and responsive typography
-- Native expandable expertise sections
-- Portfolio terminal: Ctrl/Cmd + K; `help`, `whoami`, `skills`, `contact`, `research`, `clear`, `exit`
-- Contact copy button with fallback
-- Keyboard navigation, modal focus handling and reduced-motion support
-
-The existing `/trashbio/`, `/claude/`, feed, verification files and media are retained.
-
-## Deployment
-
-GitHub Pages publishes the root of `main`. Push the reviewed static files to deploy.
+GitHub Pages deploys the root of `main`. Existing `/trashbio/`, `/claude/`, media, feed and verification files are retained.
